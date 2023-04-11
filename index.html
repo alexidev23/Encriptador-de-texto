@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encriptador de texto</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <header>
+        <img src="./assets/img/Logo.svg" alt="Logo Alura" class="logo">
+    </header>
+
+    <section class="contenedor">
+        <div class="contenedor-encriptador">
+            <textarea id="Encriptador" placeholder="Ingrese el texto aqui"></textarea>
+            <p class="advertencia"><i class="fa-solid fa-circle-exclamation" style="color: #495057;"></i>Solo letras minúsculas y sin acentos</p>
+            <div class="botones">
+                <button class="btn-encriptar" id="Encriptar">Encriptar</button>
+                <button class="btn-desencriptar" id="Desencriptar">Desencriptar</button>
+            </div>
+        </div>
+
+        <div class="contenedor-desencriptador">
+            <div id="Desencriptador">    
+                <img src="./assets/img/Muñeco.svg" alt="Muñeco con una lupa" class="muñeco">
+                <div class="texto">
+                    <h4>Ningún mensaje fue encontrado</h4>
+                    <h6>Ingresa el texto que desees encriptar o desencriptar.</h6>
+                </div>
+            </div>
+            <button class="btn-copiar" id="Copiar">Copiar</button>
+        </div>
+    </section>
+
+    <footer>
+        <h5>Hecho por Alexis Escobar</h5>
+        <div class="redes">
+            <a href="https://github.com/alexidev23" target="_blank" rel="noopener noreferrer"><img src="./assets/img/github.svg" alt="Icono de Github"></a>
+            <a href="https://www.linkedin.com/in/alexis-escobar-95b491184/" target="_blank" rel="noopener noreferrer"><img src="./assets/img/linkedin.svg" alt="Icono de Github"></a>
+        </div>
+    </footer>
+
+    <script src="./scripts.js"></script>
+    <script src="https://kit.fontawesome.com/80ad4ec867.js" crossorigin="anonymous"></script>
+</body>
+</html>
