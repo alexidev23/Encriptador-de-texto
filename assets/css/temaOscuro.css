@@ -1,0 +1,71 @@
+/* Estilos para el tema oscuro */
+
+.dark {
+    background-color: #292d37;
+    color: #e2e7f5;
+}
+
+/* Esta parte es donde se ingresa el texto para encriptar o desencriptar */
+
+.dark textarea {
+    background-color: #292d37;
+    color: #cce4ff;
+}
+
+.dark textarea::placeholder {
+    color: #cce4ff;
+}
+
+.dark .advertencia, .dark .advertencia i {
+    color: #cce4ff;
+}
+
+.dark .btn-encriptar {
+    background-color: #081f37;
+    color: #cce4ff;
+}
+
+.dark .btn-encriptar:hover {
+    background-color: #0A3871;
+}
+
+.dark .btn-desencriptar {
+    background-color: #495057;
+    color: #cce4ff;
+    border: none;
+}
+
+.dark .btn-desencriptar:hover {
+    background-color: #f1f1f1;
+    color: #0A3871;
+}
+
+/* Estilos para el tema oscuro para el cuadro donde aparecera el texto desencriptado o encriptado*/
+
+.dark .contenedor-desencriptador {
+    background-color: #121212;
+    color: #cce4ff;
+}
+
+.dark #Desencriptador {
+    color: #cce4ff;
+}
+
+.dark .texto h4, .dark .texto h6 {
+    color: #cce4ff;
+}
+
+.dark .btn-copiar {
+    background-color: #495057;
+    color: #cce4ff;
+    border: none;
+}
+
+.dark .btn-copiar:hover {
+    background-color: #f1f1f1;
+    color: #0A3871;
+}
+
+.dark footer h5 {
+    color: #cce4ff;
+}
