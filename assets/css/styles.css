@@ -413,6 +413,7 @@ footer h5 {
         font-weight: 600;
         word-wrap: break-word;
         width: 280px;
+        height: auto;
     }
 
     .muñeco {
