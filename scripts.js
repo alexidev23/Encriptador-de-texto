@@ -1,3 +1,5 @@
+const btnSwitch = document.querySelector("#switch")
+const logo = document.getElementById("Logo")
 const encriptador = document.getElementById("Encriptador")
 const desencriptador = document.querySelector("#Desencriptador")
 // Botones
@@ -5,7 +7,22 @@ const btnEncriptar = document.querySelector("#Encriptar")
 const btnDesencriptar = document.getElementById("Desencriptar")
 const btnCopiar = document.getElementById("Copiar")
 
-btnCopiar.style.display = 'none'
+// Este apartado es para cambiar entre el tema claro y el oscuro, ademas para cambiar el svg del logo
+// Este contador siver para detectar cuando se tiene que cambiar el svg del logo
+let par = 0
+
+btnSwitch.addEventListener('click', () => {
+    
+    document.body.classList.toggle('dark')
+    btnSwitch.classList.toggle('active')
+
+    if (par % 2 != 0) {
+        logo.setAttribute("src", "../assets/img/Logo.svg")
+    } else {
+        logo.setAttribute("src", "../assets/img/LogoBlanco.svg")
+    }
+    par++
+})
 
 // Funcion para prevenir que se ingresen mayusculas, palabras asentuadas o caracteres especiales
 function textCorrrect(texto){
@@ -16,8 +33,7 @@ encriptador.addEventListener("keyup", ()=>{
 	encriptador.value = textCorrrect(encriptador);
 })
 
-
-/*Funcion Encriptar*/
+// Funcion Encriptar
 
 const encriptar = (texto) => {
     let encriptado = '';
@@ -46,7 +62,7 @@ const encriptar = (texto) => {
 	return encriptado;
 }
 
-/*Muestra el texto encriptado en pantalla*/
+// Muestra el texto encriptado en pantalla
 
 btnEncriptar.addEventListener("click", (e)=>{
 	e.preventDefault();
@@ -74,7 +90,7 @@ function desencriptar(texto) {
 	return texto;
 }
 
-/*Muestra el texto desencriptado en pantalla*/
+// Muestra el texto desencriptado en pantalla
 
 btnDesencriptar.addEventListener("click", (e)=>{
 	e.preventDefault();
@@ -89,8 +105,8 @@ btnDesencriptar.addEventListener("click", (e)=>{
 	
 })
 
+// Copiar en porta papeles el texto
 
-// Copiar en porta papeles
 btnCopiar.addEventListener('click', (e) => {
     e.preventDefault();
 

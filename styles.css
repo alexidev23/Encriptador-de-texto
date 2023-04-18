@@ -11,14 +11,68 @@
 body {
     height: 100vh;
     background-color: #e2e7f5;
+    transition: .3s ease all;
 }
 
 header {
     height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .logo {
     margin: 30px 20px;
+}
+
+.switch {
+    height: 20px;
+    width: 44px;
+    margin-right: 100px;
+    background-color: #292d37;
+    border-radius: 50px;
+    border: none;
+    position: relative;
+    right: 0;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: none;
+}
+
+.switch::after {
+    content: "";
+    display: block;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    background-color: #f1f1f1;
+    top: 0;
+    left: 0;
+    right: unset;
+    border-radius: 100px;
+    transition: .3s ease all;
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, .2);
+}
+
+.active {
+    background-color: orange;
+    color: #000;
+}
+
+.active::after {
+    right: 0;
+    left: unset;
+}
+
+span {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    display: block;
+    background: none;
+    color: #fff;
 }
 
 .contenedor {
@@ -46,6 +100,7 @@ textarea {
     border: none;
     resize: none;
     outline: none;
+    transition: .3s ease all;
 }
 
 textarea::placeholder {
@@ -57,10 +112,13 @@ textarea::placeholder {
     color: #495057;
     font-size: 12px;
     margin: 10px 0 10px 10px;
+    transition: .3s ease all;
 }
 
 .advertencia i {
     margin-right: 8px;
+    color: #495057;
+    transition: .3s ease all;
 }
 
 .botones {
@@ -72,33 +130,48 @@ textarea::placeholder {
 }
 
 .btn-encriptar {
-    width: 180px;
+    width: 240px;
     border-radius: 30px;
     height: 60px;
     border: none;
     background-color: #0A3871;
     color: #e2e7f5;
     cursor: pointer;
+    transition: .3s ease all;
+}
+
+.btn-encriptar:hover {
+    background-color: #081f37;
 }
 
 .btn-desencriptar {
     border-radius: 30px;
     height: 60px;
-    width: 180px;
+    width: 240px;
     border: 1px #0A3871 solid;
     background-color: #fff;
     color: #0A3871;
     cursor: pointer;
+    transition: .3s ease all;
+}
+
+.btn-desencriptar:hover {
+    background-color: #495057;
+    color: #d7d7d8;
 }
 
 .contenedor-desencriptador {
     width: 400px;
+    height: 500px;
     background-color: #fff;
     border-radius: 30px;
+    padding: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    margin-right: 140px;
+    transition: .3s ease all;
 }
 
 #Desencriptador {
@@ -106,8 +179,16 @@ textarea::placeholder {
     font-size: 22px;
     font-weight: 600;
     word-wrap: break-word;
-    width: 100%;
-    padding: 14px;
+    width: 350px;
+    height: 420px;
+    overflow-y: scroll;
+    transition: .3s ease all;
+}
+
+/* Esto permite que la barra de scroll no se vea */
+
+#Desencriptador::-webkit-scrollbar {
+    display: none;
 }
 
 .texto {
@@ -124,6 +205,7 @@ textarea::placeholder {
     opacity: 0.8;
     font-weight: 700;
     font-size: 22px;
+    transition: .3s ease all;
 }
 
 .texto h6 {
@@ -131,10 +213,11 @@ textarea::placeholder {
     width: 80%;
     text-align: center;
     margin: 6px 0 0 0;
+    transition: .3s ease all;
 }
 
 .btn-copiar {
-    margin: 0 0 15px 0;
+    margin: 15px 0;
     border-radius: 30px;
     height: 70px;
     width: 300px;
@@ -144,13 +227,28 @@ textarea::placeholder {
     cursor: pointer;
 }
 
+.btn-copiar:hover {
+    background-color: #495057;
+    color: #d7d7d8;
+}
+
+/* Estas estilos son para que el boton copiar aparezca cuando se encripte o desencripte un texto, sino permanece oculto */
+
+.desaparecer {
+    display: none;
+}
+
+.aparecer {
+    display: block;
+}
+
 footer {
     height: 62px;
+    gap: 8px;
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    margin: 30px;
 }
 
 footer h5 {
@@ -161,7 +259,6 @@ footer h5 {
 .redes img {
     height: 24px;
 }
-
 
 /* Tablet */
 @media(min-width: 481px) and (max-width:1024px){
@@ -178,7 +275,7 @@ footer h5 {
     .contenedor-desencriptador {
         height: auto;
         width: 700px;
-        margin: 130px 0;
+        margin: 130px 0 0 0;
     }
 
     #Desencriptador {
@@ -191,6 +288,7 @@ footer h5 {
         margin: 20px;
         display: flex;
         justify-content: center;
+        height: auto;
     }
 
     .muñeco {
@@ -204,6 +302,7 @@ footer h5 {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        margin-bottom: 20px;
     }
 
     .texto h4 {
@@ -240,8 +339,12 @@ footer h5 {
     }
 
     footer {
-        margin-top: 100px;
+        margin-top: 90px;
         gap: 10px;
+    }
+
+    .redes {
+        margin-bottom: 60px;
     }
 }
 
@@ -297,8 +400,9 @@ footer h5 {
     }
 
     .contenedor-desencriptador {
-        width: 300px;
+        width: 340px;
         height: auto;
+        margin: 0;
     }
 
     #Desencriptador {
@@ -307,6 +411,7 @@ footer h5 {
         font-size: 22px;
         font-weight: 600;
         word-wrap: break-word;
+        width: 280px;
     }
 
     .muñeco {
@@ -314,7 +419,6 @@ footer h5 {
     }
 
     .texto {
-        width: 280px;
         display: flex;
         flex-direction: column;
         align-items: center;
