@@ -17,9 +17,9 @@ btnSwitch.addEventListener('click', () => {
     btnSwitch.classList.toggle('active')
 
     if (par % 2 != 0) {
-        logo.setAttribute("src", "../assets/img/Logo.svg")
+        logo.setAttribute("src", "./assets/img/Logo.svg")
     } else {
-        logo.setAttribute("src", "../assets/img/LogoBlanco.svg")
+        logo.setAttribute("src", "./assets/img/LogoBlanco.svg")
     }
     par++
 })
